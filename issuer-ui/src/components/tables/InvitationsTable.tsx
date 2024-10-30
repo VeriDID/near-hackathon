@@ -7,6 +7,7 @@ import { InvitationSubPages } from "../main/InvitationsPage";
 export default function InvitationsTable({
   setInvitationSubPage,
   setFieldValues,
+  items,
 }: {
   setInvitationSubPage: Dispatch<SetStateAction<InvitationSubPages>>;
   setFieldValues: Dispatch<
@@ -20,6 +21,7 @@ export default function InvitationsTable({
       managers: string;
     }>
   >;
+  items: { id: number; name: string; type: string; assets: string }[];
 }) {
   return (
     // <Table.ScrollArea borderWidth="1px" maxW="xl">
@@ -35,6 +37,7 @@ export default function InvitationsTable({
         w={"full"}
         justifyContent={"space-between"}
         alignItems={"center"}
+        color={"black"}
       >
         <Table.Row fontSize={"16px"} fontWeight={"semibold"}>
           <Table.ColumnHeader ps={"1.5rem"} py={"0.5rem"} textAlign={"left"}>
@@ -52,7 +55,7 @@ export default function InvitationsTable({
         {items.map((item) => (
           <Table.Row
             onClick={() => {
-              setInvitationSubPage(InvitationSubPages["Edit Invitation"]);
+              setInvitationSubPage(InvitationSubPages["Edit Fund"]);
               setFieldValues({
                 name: item.name,
                 assets: item.assets.toString(),
@@ -86,5 +89,3 @@ export default function InvitationsTable({
     // </Table.ScrollArea>
   );
 }
-
-const items = [{ id: 1, name: "Growth", type: "Mutual", assets: "100M" }];

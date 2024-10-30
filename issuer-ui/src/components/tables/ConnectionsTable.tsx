@@ -26,6 +26,7 @@ export default function ConnectionsTable({
         w={"full"}
         justifyContent={"space-between"}
         alignItems={"center"}
+        color={"black"}
       >
         <Table.Row fontSize={"16px"} fontWeight={"semibold"}>
           <Table.ColumnHeader ps={"1.5rem"} py={"0.5rem"} textAlign={"left"}>
@@ -69,6 +70,8 @@ export default function ConnectionsTable({
 }
 
 const items = [
-  { id: 1, name: "ABC Dealer", type: "Dealer", assets: 999.99 },
-  { id: 2, name: "Regulator", type: "Regulator", assets: 49.99 },
+  { id: 1, name: "Mackelson Investments", type: "Dealer", assets: 999.99 },
+  { id: 2, name: "Spornhammer Family", type: "Family Office", assets: 49.99 },
+  { id: 3, name: "Starkman Planning", type: "Dealer", assets: 49.99 },
+  { id: 4, name: "Federal Exchange Commission", type: "Regulator", assets: 49.99 }
 ];
